@@ -1,4 +1,4 @@
-@login
+@uatsmoke
 Feature: Add Item to Cart and Place the order
 
   @SC1
