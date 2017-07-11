@@ -20,22 +20,43 @@ module.exports = {
             "webdriver.gecko.driver" : "./node_modules/geckodriver/bin/geckodriver"
         }
     },
+    "test_settings": {
+        default: {
+            launch_url: 'http://ondemand.saucelabs.com:80',
+            selenium_port: 80,
+            selenium_host: 'ondemand.saucelabs.com',
+            silent: true,
+            username: 'mahantesh-hadimani',
+            access_key: '90da9e36-ec82-4175-936b-5ae61411a9b9',
+            screenshots: {
+                enabled: false,
+                path: '',
+            },
+            globals: {
+                waitForConditionTimeout: 10000,
+            },
+            desiredCapabilities: {
+                // name:'MFW2 Test',
+                browserName: 'chrome',
+                parentTunnel:'erik-horrell',
+                tunnelIdentifier:'MercerTunnel1',
+            }
+        },
+        chrome: {
+            desiredCapabilities: {
+                browserName: 'chrome',
+                javascriptEnabled: true,
+                acceptSslCerts : true,
+                chromeOptions : {
+                    prefs : {
+                        "credentials_enable_service" : false,
+                        "profile.password_manager_enabled": false
+                    }
+                }
+            }
+        },
+    },
 
-    default: {
-        launch_url: 'http://ondemand.saucelabs.com:80',
-        selenium_port: 80,
-        selenium_host: 'ondemand.saucelabs.com',
-        silent: true,
-        username: 'mahantesh-hadimani',
-        access_key: '90da9e36-ec82-4175-936b-5ae61411a9b9',
-        screenshots: {
-        enabled: false,
-        path: '',
-},
-globals: {
-    waitForConditionTimeout: 10000,
-},
-},
     //"test_settings": {
         //"default" : {
             //"launch_url": "http://localhost",
